@@ -1,0 +1,136 @@
+{
+  "project": {
+    "title": "Hạt Sương Ban Mai — Đà Lạt Specialty Coffee TVC",
+    "genre": "TVC Commercial",
+    "logline": "Từ giọt sương mai trên đồi cà phê Cầu Đất đến tách espresso bốc khói giữa lòng phố thị, đánh thức mọi giác quan.",
+    "aspect_ratio": "16:9",
+    "target_duration_sec": 24,
+    "primary_platform": "all",
+    "workflow_mode": "ingredients"
+  },
+  "continuity_bible": {
+    "style_lock": "Shot on ARRI Alexa Mini LF with Cooke Panchro 50mm vintage prime lens, Kodak Vision3 250D warm natural film grain, shallow depth of field, rich espresso-brown and golden-amber cinematic color grade",
+    "color_palette": ["Deep Espresso Brown", "Warm Golden Amber", "Misty Pine Green"],
+    "ingredients": [
+      {
+        "id": "CHAR_1",
+        "tag": "@Image1",
+        "kind": "character",
+        "name": "Minh — Nghệ nhân pha chế (Barista)",
+        "short_anchor": "the 29-year-old Vietnamese male barista in a dark olive linen apron",
+        "invariant_description": "A 29-year-old Vietnamese man with warm expressive dark eyes, neatly textured short black hair, natural skin pores, wearing a rolled-sleeve cream cotton henley shirt under a dark olive-green heavy linen barista apron"
+      },
+      {
+        "id": "PROD_1",
+        "tag": "@Image2",
+        "kind": "product",
+        "name": "Túi cà phê Hạt Sương & Tách Gốm Thủ Công",
+        "short_anchor": "the matte terracotta craft coffee bag and speckled stoneware espresso cup",
+        "invariant_description": "A minimalist matte terracotta-colored craft coffee pouch with embossed gold foil mountain emblem beside a handmade dark speckled ceramic espresso cup with thick golden-brown crema"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "shot_number": 1,
+      "title": "Giọt sương rơi trên trái cà phê chín đỏ",
+      "narrative_beat": "Hook",
+      "duration_sec": 6,
+      "ingredient_refs": [],
+      "director_note": "Mở đầu bằng cú macro cực cận gây ấn tượng thị giác và âm thanh ASMR giọt sương rơi, kết nối thiên nhiên Đà Lạt.",
+      "framing": "Extreme macro close-up eye-level shot",
+      "camera_move": "Slow cinematic dolly-in",
+      "subject_state": "A cluster of glossy deep-crimson ripe Arabica coffee cherries hanging on a wet green branch covered in crystal morning dew",
+      "action": "A single crystal dewdrop swells at the tip of a ripe red coffee cherry, trembles, and detaches in gentle slow motion",
+      "secondary_physics": "Tiny water ripples shimmer across the glossy cherry skin while cool white highland mist drifts softly through pine needles",
+      "environment": "Misty Cau Dat highland coffee plantation in Da Lat at dawn with layered pine hills blurred in the background",
+      "lighting": "Low-angle golden sunrise rim light piercing cool blue morning mist, creating luminous specular highlights inside the falling droplet",
+      "last_frame_state": "Extreme macro close-up of the ripe red coffee cherry glistening right after the droplet falls, golden sunbeam flaring warmly across the branch",
+      "transition_out": "Match cut on falling drop to pouring espresso stream",
+      "audio": {
+        "sfx": "Crisp resonant water droplet chime, gentle highland morning breeze rustling leaves",
+        "dialogue": "",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "",
+        "is_voiceover": false,
+        "music": "Single warm acoustic cello harmonic note fading in",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 2,
+      "title": "Dòng chảy Espresso vàng óng",
+      "narrative_beat": "Build",
+      "duration_sec": 6,
+      "ingredient_refs": ["PROD_1"],
+      "director_note": "Nối nhịp chuyển động từ giọt sương sang dòng chiết xuất cà phê đặc sánh rơi vào tách gốm thủ công.",
+      "framing": "Low-angle macro close-up shot",
+      "camera_move": "Smooth subtle pedestal-up movement",
+      "subject_state": "Bottomless brass espresso portafilter suspended directly above the handmade dark speckled ceramic cup on a brushed steel drip tray",
+      "action": "Rich velvety tiger-striped espresso streams coalesce into a single syrupy golden-brown ribbon pouring steadily into the ceramic cup",
+      "secondary_physics": "Thick hazelnut-colored crema swirls at the surface while delicate aromatic white steam curls upward into the light",
+      "environment": "Warm wooden specialty coffee bar counter with soft-focus copper coffee equipment in the background",
+      "lighting": "Warm directional tungsten sidelight illuminating the translucent amber crema and rising steam against dark moody wood",
+      "transition_out": "Cut on steam rising toward barista's face",
+      "audio": {
+        "sfx": "Rich velvety espresso extraction purr, gentle liquid stream pattering into thick crema",
+        "dialogue": "",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "",
+        "is_voiceover": false,
+        "music": "Warm fingerstyle acoustic guitar pulse enters softly",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 3,
+      "title": "Khoảnh khắc trao hương vị",
+      "narrative_beat": "Climax",
+      "duration_sec": 6,
+      "ingredient_refs": ["CHAR_1", "PROD_1"],
+      "director_note": "Nhân vật chính xuất hiện đồng nhất với @Image1, tương tác tự nhiên và thoại lip-sync tiếng Việt ngắn gọn, ấm áp.",
+      "framing": "Medium close-up chest-up shot",
+      "camera_move": "Slow Steadicam push-in at eye level",
+      "subject_state": "Minh stands behind the walnut coffee bar holding the steaming speckled ceramic espresso cup gently with both hands",
+      "action": "He places the steaming espresso cup onto a wooden coaster toward the viewer, looks up with a genuine warm smile, and speaks naturally",
+      "secondary_physics": "Delicate wisps of coffee steam drift past his linen apron as floating dust motes dance in the morning sunbeams",
+      "environment": "Sunlit artisan wood-and-glass cafe interior with lush green indoor ferns softly blurred behind him",
+      "lighting": "Soft golden morning window key light from the left with warm natural skin tones and gentle shadow roll-off",
+      "transition_out": "Smooth dissolve to hero packshot",
+      "audio": {
+        "sfx": "Soft ceramic cup resting on wooden coaster, quiet cozy cafe room tone",
+        "dialogue": "Một ngụm sương mai Đà Lạt, trọn vẹn cho ngày mới.",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "warm, calm, inviting male voice",
+        "is_voiceover": false,
+        "music": "Warm acoustic guitar and soft upright bass swell",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 4,
+      "title": "Hero Packshot — Hạt Sương Ban Mai",
+      "narrative_beat": "CTA",
+      "duration_sec": 6,
+      "ingredient_refs": ["PROD_1"],
+      "director_note": "Khung hình tĩnh sang trọng chừa khoảng trống (negative space) bên phải để hậu kỳ chèn slogan & logo thương hiệu.",
+      "framing": "Medium tabletop product hero shot with clean negative space on the right third",
+      "camera_move": "Slow lateral slider truck right",
+      "subject_state": "The matte terracotta coffee pouch stands on the left two-thirds of a rustic dark walnut table beside the steaming ceramic espresso cup and scattered roasted coffee beans",
+      "action": "Camera glides subtly sideways as golden sunlight slowly sweeps across the embossed foil emblem on the pouch",
+      "secondary_physics": "Gentle aromatic steam rises continuously from the espresso cup while tree-leaf shadows dapple softly across the wood grain",
+      "environment": "Open wooden terrace overlooking misty green highland hills blurred softly in the distance",
+      "lighting": "Radiant golden hour sunlight with crisp rim highlights along the pouch edges and warm creamy bokeh",
+      "transition_out": "Fade to brand end-card",
+      "audio": {
+        "sfx": "Soft morning breeze, subtle porcelain warmth",
+        "dialogue": "",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "",
+        "is_voiceover": false,
+        "music": "Resonant warm acoustic guitar chord resolving cleanly",
+        "include_bgm_in_video_gen": true
+      }
+    }
+  ]
+}

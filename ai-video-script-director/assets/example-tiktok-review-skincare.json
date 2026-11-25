@@ -1,0 +1,136 @@
+{
+  "project": {
+    "title": "Review Serum Cấp Ẩm B5 Lumina — KOC Linh (TikTok & Reels)",
+    "genre": "TikTok / Facebook Reels KOC Product Review",
+    "logline": "Linh chia sẻ bí quyết cứu làn da khô mốc mùa điều hòa chỉ sau 1 tuần với Serum B5 Lumina thấm nhanh không bết dính.",
+    "aspect_ratio": "9:16",
+    "target_duration_sec": 24,
+    "primary_platform": "all",
+    "workflow_mode": "ingredients"
+  },
+  "continuity_bible": {
+    "style_lock": "Shot on Sony FX3 vertical 9:16 commercial UGC aesthetic, 35mm f/1.8 prime lens, clean bright natural daylight skin tones, soft creamy bokeh, crisp beauty-commercial color grade",
+    "color_palette": ["Clean Ice Blue", "Soft Ivory White", "Warm Natural Peach"],
+    "ingredients": [
+      {
+        "id": "CHAR_1",
+        "tag": "@Image1",
+        "kind": "character",
+        "name": "Linh — Beauty KOC 24 tuổi",
+        "short_anchor": "Linh, the 24-year-old Vietnamese female beauty creator in a pastel blue cardigan",
+        "invariant_description": "A 24-year-old Vietnamese woman named Linh with radiant glass-skin complexion, shoulder-length layered dark brown hair with wispy bangs, bright friendly eyes, wearing a soft pastel-blue ribbed knit cardigan over a white camisole and minimalist silver stud earrings"
+      },
+      {
+        "id": "PROD_1",
+        "tag": "@Image2",
+        "kind": "product",
+        "name": "Chai Serum B5 Lumina 30ml",
+        "short_anchor": "the frosted ice-blue glass dropper bottle of Lumina B5 Serum",
+        "invariant_description": "A sleek 30ml frosted ice-blue cylindrical glass serum bottle with a glossy white rubber pipette dropper cap and minimalist silver geometric band (Lumina B5 Serum)"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "shot_number": 1,
+      "title": "Hook 3s — Bắt nét chai Serum sát ống kính",
+      "narrative_beat": "Hook",
+      "duration_sec": 6,
+      "ingredient_refs": ["CHAR_1", "PROD_1"],
+      "director_note": "Mở đầu chuẩn KOC TikTok: đưa chai serum lại gần ống kính để rack focus sang gương mặt rạng rỡ của Linh ở vùng trung tâm trên (9:16 safe-zone), giữ chân người lướt ngay 2 giây đầu.",
+      "framing": "Vertical 9:16 medium close-up shot with subject centered in upper-middle two-thirds safe zone",
+      "camera_move": "Static tripod frame with smooth rack focus from foreground bottle to subject's eyes",
+      "subject_state": "Linh sits in front of a bright sunlit vanity mirror holding the frosted ice-blue glass serum bottle close to the foreground lens with a playful confident smile",
+      "action": "She pulls the serum bottle slightly back to chest height as focus racks crisply onto her glowing face while she speaks energetically to the camera",
+      "secondary_physics": "Soft morning breeze stirs a few strands of her dark brown hair while sunlight catches the frosted blue glass bottle",
+      "environment": "Minimalist bright bedroom vanity corner with sheer white curtains, small green eucalyptus vase, and uncluttered lower third",
+      "lighting": "Bright diffused morning window key light illuminating clear dewy skin with soft natural catchlights in her eyes",
+      "transition_out": "Fast cut on hand unscrewing dropper cap",
+      "audio": {
+        "sfx": "Subtle glass bottle handling sound, crisp quiet room ambience",
+        "dialogue": "Ngồi điều hòa cả ngày mà da vẫn căng bóng, bí kíp của Linh nằm ở em B5 này!",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "bright, energetic, relatable young female KOC voice",
+        "is_voiceover": false,
+        "music": "Upbeat clean pop pluck rhythm",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 2,
+      "title": "Cận cảnh ASMR giọt tinh chất B5 trong veo",
+      "narrative_beat": "Build",
+      "duration_sec": 6,
+      "ingredient_refs": ["PROD_1"],
+      "director_note": "Cú cận cảnh ASMR chứng minh kết cấu mỏng nhẹ như nước, không đặc bết — thuyết phục thị giác người xem nữ.",
+      "framing": "Vertical 9:16 extreme macro close-up centered in the middle safe zone",
+      "camera_move": "Slow cinematic dolly-in",
+      "subject_state": "The glass pipette tip of the frosted ice-blue Lumina B5 Serum bottle hovers just above clean moisturized skin on the back of a hand",
+      "action": "A crystal-clear, silky serum droplet releases smoothly from the glass pipette, lands softly on the skin, and glides effortlessly without stickiness",
+      "secondary_physics": "Luminous light refracts through the transparent serum drop as the lightweight liquid spreads into a dewy hydrated sheen",
+      "environment": "Clean sunlit pastel-blue and white studio vanity backdrop with soft creamy bokeh and uncluttered bottom margin",
+      "lighting": "Crisp studio rim backlight making the clear serum droplet glow like crystal against warm natural skin texture",
+      "last_frame_state": "Extreme macro close-up of the back of the hand glistening with an even, weightless dewy hydration sheen beside the frosted ice-blue serum bottle",
+      "transition_out": "Cut on motion to Linh applying serum on cheek",
+      "audio": {
+        "sfx": "Gentle rubber dropper squeeze, delicate crystal liquid drop landing softly on skin",
+        "dialogue": "Chất serum trong veo như nước, thoa tới đâu thấm tiệp mát lạnh tới đó luôn.",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "warm, soothing female voiceover",
+        "is_voiceover": true,
+        "music": "",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 3,
+      "title": "Test độ căng bóng trên má (Proof)",
+      "narrative_beat": "Climax",
+      "duration_sec": 6,
+      "ingredient_refs": ["CHAR_1"],
+      "director_note": "Chứng minh hiệu ứng da căng mọng đàn hồi (plump glass skin) ngay lập tức, tạo khao khát sở hữu.",
+      "framing": "Vertical 9:16 close-up portrait framed cleanly in the upper-middle safe zone",
+      "camera_move": "Smooth subtle handheld push-in",
+      "subject_state": "Linh faces the camera closely in warm natural window light with fresh hydrated skin",
+      "action": "She gently pats her cheek with two fingertips, showing natural bouncy skin elasticity, then beams a delighted smile straight into the lens",
+      "secondary_physics": "Healthy dewy specular highlight shifts smoothly across her cheekbone as she tilts her head slightly",
+      "environment": "Sunlit cozy vanity room with soft white curtain glow in the blurred background",
+      "lighting": "Golden-morning soft diffused beauty lighting highlighting smooth hydrated pores without harsh shadows",
+      "transition_out": "Clean cut to CTA shot",
+      "audio": {
+        "sfx": "Soft gentle fingertip tap on hydrated skin, quiet room tone",
+        "dialogue": "Đánh nền lên mượt cực kỳ, không còn cảnh mốc nền vùng cánh mũi nữa.",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "convincing, cheerful female voiceover",
+        "is_voiceover": true,
+        "music": "",
+        "include_bgm_in_video_gen": false
+      }
+    },
+    {
+      "shot_number": 4,
+      "title": "Chốt đơn & Kêu gọi bấm Giỏ hàng (CTA)",
+      "narrative_beat": "CTA",
+      "duration_sec": 6,
+      "ingredient_refs": ["CHAR_1", "PROD_1"],
+      "director_note": "Linh cầm sản phẩm ngang ngực ở vùng an toàn trung tâm, tay chỉ nhẹ xuống góc trái dưới (vị trí giỏ hàng TikTok Shop / link Reels) và chốt ưu đãi.",
+      "framing": "Vertical 9:16 medium waist-up shot with generous safe margins at bottom and right edge",
+      "camera_move": "Locked-off static tripod shot",
+      "subject_state": "Linh sits upright holding the frosted ice-blue Lumina B5 Serum bottle clearly beside her cheek at center-left of the frame",
+      "action": "She nods warmly while speaking with natural lip-sync, then gestures playfully downward toward the bottom-left corner with her free hand",
+      "secondary_physics": "Sunlight sparkles gently along the silver band of the serum bottle as her pastel cardigan sleeve moves naturally",
+      "environment": "Bright tidy bedroom vanity background with plenty of clean space above her head for promo headline text",
+      "lighting": "Even bright natural daylight key light with crisp product visibility and warm inviting expression",
+      "transition_out": "Hold final smile for 0.5s end-card",
+      "audio": {
+        "sfx": "Subtle cheerful room ambience",
+        "dialogue": "Linh gắn sẵn ưu đãi ở giỏ hàng góc trái rồi, bấm săn ngay kẻo hết nha!",
+        "dialogue_lang": "Vietnamese",
+        "delivery": "friendly, enthusiastic female KOC voice",
+        "is_voiceover": false,
+        "music": "Clean upbeat acoustic pop outro chord",
+        "include_bgm_in_video_gen": true
+      }
+    }
+  ]
+}
