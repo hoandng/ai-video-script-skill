@@ -1,94 +1,64 @@
-# AI Video Script & Prompt Director (`ai-video-script-director` v1.1)
+# AI Video Script & Prompt Director (`ai-video-script-director` v1.2)
 
-Bộ **Agent Skill chuẩn kiến trúc Anthropic** chuyên trị tạo kịch bản và prompt cho **Video Review sản phẩm (KOC/UGC), Quảng cáo bán hàng trên TikTok, Facebook Reels, YouTube Shorts (`9:16`)**, TVC thương hiệu và phim ngắn trên các công cụ tạo ảnh/video AI (**Seedance 2.0/2.5, Google Flow / Veo 3.1, Runway Gen-4, Kling 3.0, Sora 2, Nano Banana, Midjourney**).
-
----
-
-## Điểm cốt lõi: Luồng tương tác 3 bước thông minh
-
-Thay vì sinh tràn lan hàng chục prompt ngay lập tức khi chưa rõ sản phẩm, Skill điều hướng AI Chatbot (**Claude, Gemini, ChatGPT**) hoạt động như một Đạo diễn thực thụ qua **3 bước rõ ràng**:
-
-1. **Bước 1 — Hỏi thông tin cần thiết (Intake Interview)**:
-   AI chủ động hỏi gọn 5 thông tin đầu vào:
-   - **Tên sản phẩm / Thương hiệu**, bao bì nhận diện (có ảnh chụp thật chưa?) & **1–3 điểm mạnh cốt lõi (USP)**.
-   - **Tên nhân vật (Reviewer / KOC)**, độ tuổi/ngoại hình/trang phục & phong cách nói chuyện.
-   - **Kênh đăng & Thời lượng**: TikTok, Facebook Reels, Shorts (`9:16` dọc) hay `16:9` ngang; độ dài `15s`, `24–30s`, `45–60s`.
-   - **Tệp khách hàng, nỗi đau & CTA** (bấm giỏ hàng góc trái, nhắn tin, bình luận...).
-   - **Công cụ AI tạo video đích** (Seedance, Google Flow, Runway, Kling...) & chế độ thoại (**Lip-sync nhép môi** hay **Voiceover đọc đè**).
-2. **Bước 2 — Đề xuất 3–5 kịch bản khác nhau để lựa chọn**:
-   AI sinh ra **3 đến 5 phương án kịch bản** với các góc đánh viral khác nhau (Nỗi đau & Giải pháp PAS, Review KOC đập hộp trải nghiệm thật, Before/After chứng minh thực chiến, Tình huống đời thường có Twist, ASMR cận cảnh sang trọng) — kèm đầy đủ Hook 3s đầu, lời thoại khớp thời lượng và CTA để người dùng chọn.
-3. **Bước 3 — Xuất trọn bộ Hồ sơ đồng nhất & Prompt Sản xuất cho kịch bản đã chọn**:
-   Sau khi người dùng chọn phương án ưng ý, AI mới xuất chi tiết:
-   - **Continuity Bible**: Prompt tạo ảnh gốc giữ đồng nhất gương mặt nhân vật (`@Image1` / `Ingredient 1`) và hướng dẫn gắn ảnh thật sản phẩm (`@Image2` / `Ingredient 2`) để không méo chữ/logo thương hiệu.
-   - **Prompt Ảnh First/Last Frame + Prompt Video chuẩn cú pháp từng nền tảng**, tuân thủ **vùng an toàn khung hình dọc `9:16 Safe-Zone`** (tránh bị nút tim/comment bên phải và caption/giỏ hàng bên dưới của TikTok/Reels che mất chủ thể).
+Bộ **Agent Skill thuần Markdown chuẩn kiến trúc Anthropic** — tương thích trực tiếp 100% với **Gemini Chat (Skills & Gems), Claude (Claude.ai Skills & Claude Code) và ChatGPT (Custom GPTs & Projects)** mà **không dính cảnh báo chặn mã thực thi (script/code execution)**.
 
 ---
 
-## Cấu trúc thư mục chuẩn Anthropic Agent Skills
+## Luồng trải nghiệm 2 bước cực gọn
+
+1. **Bước 1 — Gửi 1 câu đơn giản (kèm ảnh hoặc tên sản phẩm) -> Nhận ngay 4 Kịch bản hoàn chỉnh**:
+   - Ví dụ bạn gửi ảnh chai nước hoa/mỹ phẩm và gõ:
+     > *"Tôi muốn tạo các kịch bản để quảng cáo sản phẩm này trên TikTok"*
+   - AI tự động nhận diện sản phẩm trong ảnh (thương hiệu, thiết kế chai, mùi hương/công dụng USP, tệp khách hàng) và **xuất ngay lập tức 4 kịch bản TikTok/Reels (`9:16`) khác nhau**:
+     1. **Review KOC / Trải nghiệm thật**
+     2. **Storytelling Tình huống / Đời sống**
+     3. **Nỗi đau & Giải pháp trực diện (PAS)**
+     4. **Cinematic B-Roll & ASMR Sang trọng**
+   - Mỗi kịch bản có đầy đủ **Hook 3s đầu, phân cảnh góc quay, trọn bộ lời thoại tiếng Việt và CTA**.
+   - Ở cuối bài, AI mới hỏi ngắn gọn: *Bạn chọn kịch bản số mấy? Có muốn đặt tên nhân vật / thêm ưu đãi riêng của shop không? Xuất prompt cho Seedance hay Google Flow?*
+
+2. **Bước 2 — Chốt kịch bản -> Nhận trọn bộ Prompt Ảnh gốc & Video chuẩn điện ảnh**:
+   - Bạn chỉ cần nhắn ngắn gọn (ví dụ: *"Lấy kịch bản 2, nhân vật tên Minh 28 tuổi lịch lãm, xuất cho Seedance và Google Flow"*).
+   - AI xuất đầy đủ:
+     - **Hồ sơ đồng nhất (`@Image1` Nhân vật Minh + `@Image2` Ảnh sản phẩm thật của bạn)** để giữ nguyên khuôn mặt & logo thương hiệu xuyên suốt mọi cảnh.
+     - **Prompt tạo ảnh First/Last Frame** + **Prompt tạo Video từng cảnh chuẩn vùng an toàn `9:16 Safe-Zone`** (không bị nút tim/caption TikTok che mất chủ thể).
+
+---
+
+## Cấu trúc thư mục
 
 ```text
 script-skill/
-├── README.md                                            # Hướng dẫn tích hợp & sử dụng đa nền tảng
+├── README.md
+├── ai-video-script-director/                            # Gói Skill THUẦN MARKDOWN (7 file .md, 0 mã thực thi)
+│   ├── SKILL.md                                         # Điều phối chính chuẩn Anthropic Agent Skills
+│   └── references/                                      # 6 cẩm nang chuyên sâu nạp theo ngữ cảnh
+│       ├── social-commerce-hooks-and-angles.md          # 5 khung kịch bản TikTok/Reels + 9:16 Safe-Zone
+│       ├── seedance-guide.md                            # Công thức Seedance 2.0 / 2.5 (@Image, [0-6s], <SFX> {"Thoại"})
+│       ├── google-flow-veo-guide.md                     # Công thức Google Flow / Veo 3.1 (Ingredients, Lip-sync, No subtitles)
+│       ├── kling-runway-sora-guide.md                   # Công thức Kling 3.0, Runway Gen-4 I2V, Sora 2
+│       ├── keyframe-image-guide.md                      # Công thức tạo ảnh Character Sheet & Keyframe
+│       └── cinematography-lexicon.md                    # Từ điển góc máy, ống kính, ánh sáng & chuyển cảnh
 ├── dist/
-│   ├── ai-video-script-director.zip                     # Gói ZIP chuẩn upload trực tiếp lên Claude.ai Skills
-│   └── sample-output/                                   # Kết quả biên dịch mẫu (TVC 16:9 & Review TikTok 9:16)
-└── ai-video-script-director/                            # Thư mục gốc của Skill
-    ├── SKILL.md                                         # Quy trình 3 bước tương tác + điều phối Progressive Disclosure
-    ├── scripts/
-    │   ├── storyboard_compiler.py                       # Script Python (0 dependency) kiểm định & xuất prompt
-    │   └── storyboard_compiler.mjs                      # Script Node.js tương đương cho môi trường JS/Windows
-    ├── references/
-    │   ├── social-commerce-hooks-and-angles.md          # 5 khung kịch bản Review/Ads TikTok & Reels + quy tắc 9:16 Safe-Zone
-    │   ├── seedance-guide.md                            # Chuẩn cú pháp Seedance 2.0 / 2.5 (@Image, [0-6s], <SFX> {"Thoại"})
-    │   ├── google-flow-veo-guide.md                     # Chuẩn cú pháp Google Flow & Veo 3.1 (Ingredients, Lip-sync, No subtitles)
-    │   ├── kling-runway-sora-guide.md                   # Chuẩn cú pháp Kling 3.0, Runway Gen-4 I2V, Sora 2, Hailuo
-    │   ├── keyframe-image-guide.md                      # Chuẩn tạo ảnh Character Sheet & Keyframe (Nano Banana, Imagen, MJ)
-    │   └── cinematography-lexicon.md                    # Từ điển góc máy, ống kính, ánh sáng & chuyển cảnh
-    └── assets/
-        ├── storyboard-schema.json                       # JSON Schema chuẩn cho kịch bản phân cảnh
-        ├── example-tiktok-review-skincare.json          # Mẫu kịch bản Review TikTok/Reels 9:16 (KOC Linh & Serum B5)
-        ├── example-tvc-coffee.json                      # Mẫu kịch bản TVC thương hiệu 16:9 (Cà Phê Đà Lạt)
-        └── standalone-gem-gpt-prompt.md                 # Bản System Prompt gộp sẵn cho Gemini Gems & ChatGPT Custom GPTs
+│   ├── ai-video-script-director.zip                     # Gói ZIP sạch (chỉ chứa 7 file .md) upload lên Gemini / Claude
+│   ├── gemini-gem-pack/                                 # Gói dán nhanh cho Gemini Gems & ChatGPT Custom GPTs
+│   │   ├── 1_DAN_VAO_INSTRUCTIONS.txt                   # Copy dán vào ô Instructions
+│   │   └── 2_upload_vao_knowledge/                      # 6 file .md upload vào mục Knowledge
+│   └── sample-output/                                   # Các bộ kịch bản & prompt biên dịch mẫu tham khảo
+└── cli-tools/                                           # Công cụ dòng lệnh chạy rời trên máy tính (tách biệt khỏi Skill)
+    ├── storyboard_compiler.js
+    ├── storyboard_compiler.py
+    ├── storyboard-schema.json
+    ├── example-tiktok-review-skincare.json
+    └── example-tvc-coffee.json
 ```
 
 ---
 
-## Cách cài đặt trên Claude, ChatGPT & Gemini
+## Cách cài đặt nhanh (Không lỗi trên mọi nền tảng)
 
-### 1. Claude (Claude.ai & Claude Code)
-- **Claude.ai**: Vào **Settings -> Capabilities -> Skills -> Upload Skill** và chọn [`dist/ai-video-script-director.zip`](dist/ai-video-script-director.zip).
-- **Claude Code**: Copy thư mục `ai-video-script-director` vào `.claude/skills/ai-video-script-director`.
-
-### 2. ChatGPT (Custom GPTs / Projects)
-1. Tạo một Custom GPT mới -> mở [`ai-video-script-director/assets/standalone-gem-gpt-prompt.md`](ai-video-script-director/assets/standalone-gem-gpt-prompt.md), copy phần nội dung dán vào ô **Instructions**.
-2. Trong mục **Knowledge**, tải lên toàn bộ 6 file trong `ai-video-script-director/references/` cùng `storyboard_compiler.py`.
-3. Bật **Code Interpreter & Data Analysis** để ChatGPT có thể xuất file bảng phân cảnh CSV Excel cho bạn tải về.
-
-### 3. Gemini (Gemini Gems / AI Studio / Antigravity)
-- **Gemini Gems / AI Studio**: Tạo Gem mới, dán nội dung từ [`ai-video-script-director/assets/standalone-gem-gpt-prompt.md`](ai-video-script-director/assets/standalone-gem-gpt-prompt.md) vào ô **Instructions**, và đính kèm các file trong `references/` vào mục **Files/Knowledge**.
-- **Antigravity**: Đặt thư mục `ai-video-script-director` vào `.agents/skills/ai-video-script-director`.
-
----
-
-## Ví dụ trải nghiệm thực tế khi chat với AI
-
-> **Bạn gõ**: *"Mình muốn làm video review đăng TikTok và Facebook Reels cho một sản phẩm mỹ phẩm mới."*
->
-> **AI (Bước 1)**: Sẽ hỏi ngắn gọn Tên sản phẩm + công dụng chính, Tên & phong cách bạn Reviewer, thời lượng mong muốn, CTA chốt đơn và công cụ bạn dùng (Seedance hay Google Flow...).
->
-> **Bạn trả lời**: *"Sản phẩm là Serum B5 Lumina cấp ẩm không bết dính, nhân vật là Linh 24 tuổi trẻ trung, dài 24s, CTA bấm giỏ hàng góc trái, mình dùng Google Flow và Seedance."*
->
-> **AI (Bước 2)**: Lập tức đưa ra **4 kịch bản khác nhau** (1. Nỗi đau ngồi điều hòa khô mốc nền; 2. KOC đập hộp & test giọt serum ASMR; 3. Before/After độ căng bóng; 4. Tình huống đồng nghiệp xin vía da đẹp) để bạn chọn.
->
-> **Bạn chọn**: *"Chốt kịch bản số 2 nhé!"*
->
-> **AI (Bước 3)**: Xuất đầy đủ Prompt tạo ảnh nhân vật `Linh (@Image1)`, hướng dẫn gắn ảnh thật `Chai Serum B5 (@Image2)` và trọn bộ Prompt ảnh + video từng cảnh `9:16` cho Google Flow & Seedance.
-
----
-
-## Chạy thử Script CLI biên dịch mẫu Review TikTok `9:16`
-
-```bash
-# Kiểm định & biên dịch mẫu kịch bản Review TikTok 9:16 ra Markdown, JSON và CSV Excel
-node ai-video-script-director/scripts/storyboard_compiler.mjs compile --input ai-video-script-director/assets/example-tiktok-review-skincare.json --platform all --output-dir ./dist/sample-output
-```
+1. **Upload Skill trực tiếp (Gemini Chat / Claude.ai / Antigravity / Claude Code)**:
+   - Dùng trực tiếp thư mục [`ai-video-script-director/`](ai-video-script-director/) hoặc file nén [`dist/ai-video-script-director.zip`](dist/ai-video-script-director.zip) (bên trong **chỉ chứa 7 file `.md` thuần văn bản**, hoàn toàn không có script thực thi nên **Gemini Chat và Claude kích hoạt mượt 100%**).
+2. **Tạo Gemini Gem hoặc ChatGPT Custom GPT**:
+   - Dán nội dung [`dist/gemini-gem-pack/1_DAN_VAO_INSTRUCTIONS.txt`](dist/gemini-gem-pack/1_DAN_VAO_INSTRUCTIONS.txt) vào ô **Instructions**.
+   - Tải 6 file `.md` trong [`dist/gemini-gem-pack/2_upload_vao_knowledge/`](dist/gemini-gem-pack/2_upload_vao_knowledge/) vào mục **Knowledge**.

@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 /**
- * storyboard_compiler.mjs — Zero-dependency Node.js 18+ validator, scaffolder, and
+ * storyboard_compiler.js — Zero-dependency Node.js 18+ validator, scaffolder, and
  * multi-platform AI video/image prompt compiler for `ai-video-script-director`.
+ * Uses standard `.js` (CommonJS) for universal compatibility with Node.js and AI file uploaders.
  *
  * Usage:
- *   node scripts/storyboard_compiler.mjs scaffold --title "My Ad" --duration 24 --output draft.json
- *   node scripts/storyboard_compiler.mjs validate --input assets/example-tvc-coffee.json
- *   node scripts/storyboard_compiler.mjs compile  --input assets/example-tvc-coffee.json --platform all --output-dir ./out
+ *   node scripts/storyboard_compiler.js scaffold --title "My Ad" --duration 24 --output draft.json
+ *   node scripts/storyboard_compiler.js validate --input assets/example-tiktok-review-skincare.json
+ *   node scripts/storyboard_compiler.js compile  --input assets/example-tiktok-review-skincare.json --platform all --output-dir ./out
  */
 
-import fs from "node:fs";
-import path from "node:path";
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
 
 const PLATFORM_MAX_CLIP_SEC = {
   "google-flow": 8,
@@ -94,9 +97,9 @@ function stripPeriod(text) {
 
 function indexIngredients(data) {
   const map = {};
-  const list = data?.continuity_bible?.ingredients || [];
+  const list = (data && data.continuity_bible && data.continuity_bible.ingredients) || [];
   for (const item of list) {
-    if (item?.id) map[item.id] = item;
+    if (item && item.id) map[item.id] = item;
   }
   return map;
 }
@@ -105,9 +108,9 @@ function validateStoryboard(data, targetPlatform = "all") {
   const errors = [];
   const warnings = [];
 
-  const project = data?.project;
-  const bible = data?.continuity_bible;
-  const shots = data?.shots;
+  const project = data && data.project;
+  const bible = data && data.continuity_bible;
+  const shots = data && data.shots;
 
   if (!project || typeof project !== "object") {
     errors.push("Missing required top-level `project` object.");
@@ -127,7 +130,7 @@ function validateStoryboard(data, targetPlatform = "all") {
 
   let totalDuration = 0;
   shots.forEach((shot, idx) => {
-    const num = shot.shot_number ?? idx + 1;
+    const num = shot.shot_number != null ? shot.shot_number : idx + 1;
     const label = `Shot ${String(num).padStart(2, "0")}`;
     const dur = Number(shot.duration_sec || 0);
     if (!(dur > 0)) errors.push(`${label}: \`duration_sec\` must be positive.`);
@@ -172,9 +175,10 @@ function validateStoryboard(data, targetPlatform = "all") {
       );
     }
 
-    const dialogue = String(shot?.audio?.dialogue || "").trim();
+    const audio = shot.audio || {};
+    const dialogue = String(audio.dialogue || "").trim();
     if (dialogue && dur > 0) {
-      const lang = String(shot?.audio?.dialogue_lang || "Vietnamese").toLowerCase();
+      const lang = String(audio.dialogue_lang || "Vietnamese").toLowerCase();
       const maxRate = lang.includes("viet") || lang === "vi" ? 3.8 : 2.8;
       const words = dialogue.split(/\s+/).length;
       const wps = words / dur;
@@ -186,7 +190,7 @@ function validateStoryboard(data, targetPlatform = "all") {
     }
   });
 
-  const targetDur = Number(project.target_duration_sec ?? totalDuration);
+  const targetDur = Number(project.target_duration_sec != null ? project.target_duration_sec : totalDuration);
   if (Math.abs(totalDuration - targetDur) > 1.0) {
     warnings.push(`Project target duration is ${targetDur}s, while shots sum to ${totalDuration}s.`);
   }
@@ -286,7 +290,7 @@ function renderSeedanceBucket(bucket, ingredients, styleLock) {
     const end = cursor + dur;
     cursor = end;
     const tags = (shot.ingredient_refs || [])
-      .filter((r) => ingredients[r]?.tag)
+      .filter((r) => ingredients[r] && ingredients[r].tag)
       .map((r) => ingredients[r].tag)
       .join(" ");
     const tagPrefix = tags ? `(${tags}) ` : "";
@@ -524,7 +528,7 @@ function renderMarkdownBook(compiled, warnings) {
     lines.push("");
   }
 
-  if (compiled.seedance_multishot_blocks?.length > 0) {
+  if (compiled.seedance_multishot_blocks && compiled.seedance_multishot_blocks.length > 0) {
     lines.push("## 3. Seedance 2.5 Multi-Shot Timeline Prompts (<=15s Combined Cuts)", "");
     compiled.seedance_multishot_blocks.forEach((block, i) => {
       lines.push(`### Sequence Block ${i + 1}`, "```text", block, "```", "");
@@ -535,7 +539,7 @@ function renderMarkdownBook(compiled, warnings) {
 }
 
 function escapeCsvCell(val) {
-  const str = String(val ?? "");
+  const str = String(val != null ? val : "");
   if (/[",\n\r]/.test(str)) {
     return `"${str.replace(/"/g, '""')}"`;
   }
@@ -569,13 +573,13 @@ function renderCsvRows(compiled) {
       s.narrative_beat || "",
       s.title,
       (s.ingredient_refs || []).join(", "),
-      s.audio?.dialogue || "",
+      (s.audio && s.audio.dialogue) || "",
       s.keyframes.first_frame || "",
       s.keyframes.last_frame || "",
       vp.seedance || "",
       vp["google-flow"] || "",
       vp.runway || "",
-      vp.kling?.prompt || "",
+      (vp.kling && vp.kling.prompt) || "",
       vp.sora || "",
     ];
     rows.push(row.map(escapeCsvCell).join(","));
@@ -657,7 +661,7 @@ function buildScaffold(title, totalDuration, shotDuration, aspectRatio, platform
 function main() {
   const { command, opts } = parseArgs(process.argv.slice(2));
   if (!command || !["scaffold", "validate", "compile"].includes(command)) {
-    console.error("Usage: node storyboard_compiler.mjs <scaffold|validate|compile> [--options]");
+    console.error("Usage: node storyboard_compiler.js <scaffold|validate|compile> [--options]");
     process.exit(1);
   }
 

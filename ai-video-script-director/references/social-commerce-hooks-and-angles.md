@@ -1,6 +1,6 @@
 # Social Video Scripting Guide — TikTok, Facebook Reels & YouTube Shorts
 
-Use this guide during **Phase 2 (Proposing 3–5 Script Options)** and **Phase 3 (9:16 Shot Design)** whenever the user creates product reviews, affiliate/KOC clips, or social commerce ads.
+Use this guide during **Step 1 (Immediate 3–5 Script Generation)** and **Step 2 (9:16 Shot & Prompt Design)** whenever the user creates product reviews, affiliate/KOC clips, or social commerce ads.
 
 ---
 
@@ -18,9 +18,9 @@ Social viewers decide whether to swipe within **1.5 to 3 seconds**. Plan shot le
 
 ---
 
-## 2. The 5 High-Converting Social Script Archetypes (Use to Generate 3–5 Options)
+## 2. The 5 High-Converting Social Script Archetypes (Use to Generate 3–5 Options Immediately)
 
-When generating 3–5 options in Phase 2, make sure each option represents a **distinct psychological hook and visual rhythm**:
+When generating 3–5 options on Turn 1, make sure each option represents a **distinct psychological hook and visual rhythm**:
 
 ### Archetype 1: PAS — Nỗi đau & Giải pháp trực diện (Problem – Agitation – Solution)
 - **Best for**: Skincare, gia dụng thông minh, sức khỏe, phụ kiện giải quyết bất tiện hàng ngày.
@@ -72,7 +72,7 @@ Always embed vertical framing cues in `9:16` keyframe and video prompts:
 
 ## 4. Handling Real Products in AI Video (Preventing Logo / Label Distortion)
 
-Explain this workflow note clearly to the user in **Phase 3**:
+Explain this workflow note clearly to the user in **Step 2 (when delivering AI Video Prompts)**:
 1. **If the user HAS a real product photo**:
    - Crop/place the product cleanly on a neutral surface -> upload as **`@Image2` in Seedance** or **`Ingredient 2` in Google Flow**.
    - Avoid rapid 360-degree spins of small printed Vietnamese text; favor **slow push-ins, lateral sliders, lighting sweeps, liquid/mist physics around the bottle, or reviewer holding the front-facing product steadily**.
